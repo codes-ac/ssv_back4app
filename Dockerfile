@@ -9,6 +9,7 @@ ENV PATH="ssv_env/bin:$PATH"
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
+RUN mkdir staticfiles
 RUN python manage.py collectstatic --noinput
 
 COPY . .
