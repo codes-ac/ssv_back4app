@@ -13,4 +13,6 @@ COPY . .
 
 EXPOSE 8080
 
+CMD ["python", "manage.py", "collectstatic"]
+
 CMD [ "gunicorn", "ssv.wsgi:application", "--bind", "0.0.0.0:8080" ]
